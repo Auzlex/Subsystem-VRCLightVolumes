@@ -25,6 +25,8 @@ namespace VRCLightVolumes {
     {
         [Tooltip("Enable for a light that moves in game. Also enable Auto Update Volumes on the Manager.")]
         public bool IsDynamic = false;
+        [Tooltip("DMX fixture type assigned by bridge: 0 = moving head, 1 = static light, 2 = static directional.")]
+        [System.NonSerialized] public int _assignedFixtureType = 0;
         [Tooltip("Choose Point for a bulb, Spot for a flashlight or Area for a panel.")]
         public int LightType = 0; // 0: point, 1: spot, 2: area
         [Tooltip("Tints the light. White keeps the colors of its texture source.")]
@@ -59,6 +61,11 @@ namespace VRCLightVolumes {
         public float OuterAngleCos = 1f;
         [Tooltip("Tangent of the Spot cone half-angle. Used for cookie projection.")]
         public float OuterAngleTan = 0f;
+        // Backward-compatible AngleData property
+        public float AngleData {
+            get { return OuterAngleTan; }
+            set { OuterAngleTan = value; }
+        }
         [Tooltip("Width-to-height ratio of a Spot cookie. 1 is square; higher values make the projection shorter.")]
         [Min(0.001f)] public float SpotCookieAspect = 1f;
         [Tooltip("Area light height in meters. Changes its lit area and specular highlight.")]
@@ -438,6 +445,12 @@ namespace VRCLightVolumes {
             SetCustomTexture(texture, false, texture != null && typeof(RenderTexture).IsInstanceOfType(texture));
         }
 
+        // Backward-compatible integer texture ID
+        [System.NonSerialized] public int CustomID = 0;
+        public void SetCustomTexture(int id) {
+            CustomID = id;
+        }
+
         // Backward-compatible dev.15 API. Source layout is now inferred from the Texture itself; isCubemap is retained so existing callers keep compiling.
         public void SetCustomTexture(Texture texture, bool isCubemap, bool autoUpdate) {
             CustomTexture = texture;
@@ -759,6 +772,38 @@ namespace VRCLightVolumes {
         public void UpdateRotation() {
             UpdateRotationFromTransformCore();
             NotifyManager(false, false, false);
+        }
+
+        // Sets spotlight / area / cookie rotation directly without touching Transform
+        public void SetRotation(Quaternion rotation) {
+            if (Rotation == rotation) return;
+            Rotation = rotation;
+            NotifyManager(false, false, false);
+        }
+
+        // Sets parametric spotlight direction directly without touching Transform
+        public void SetDirection(Vector3 direction) {
+            if (Direction == direction) return;
+            Direction = direction;
+            NotifyManager(false, false, false);
+        }
+
+        // Backward-compatible DirectionData property
+        public Vector4 DirectionData {
+            get {
+                if (LightType == 1 && ProjectionMode != 2)
+                    return new Vector4(Direction.x, Direction.y, Direction.z, ConeFalloff);
+                return new Vector4(Rotation.x, Rotation.y, Rotation.z, Rotation.w);
+            }
+            set {
+                if (LightType == 1 && ProjectionMode != 2) {
+                    Direction = new Vector3(value.x, value.y, value.z);
+                    ConeFalloff = value.w;
+                } else {
+                    Rotation = new Quaternion(value.x, value.y, value.z, value.w);
+                }
+                NotifyManager(false, false, false);
+            }
         }
 
         // Applies caller-cached scale data without notifying the manager.
