@@ -15,13 +15,13 @@ jobs:
       - name: Read package.json
         id: package
         run: |
-          NAME=$(jq -r '.name' Packages/red.sim.lightvolumes/package.json)
-          VERSION=$(jq -r '.version' Packages/red.sim.lightvolumes/package.json)
-          DISPLAY=$(jq -r '.displayName' Packages/red.sim.lightvolumes/package.json)
-          DESCRIPTION=$(jq -r '.description' Packages/red.sim.lightvolumes/package.json)
-          UNITY=$(jq -r '.unity' Packages/red.sim.lightvolumes/package.json)
-          AUTHOR_NAME=$(jq -r '.author.name // "RED_SIM"' Packages/red.sim.lightvolumes/package.json)
-          AUTHOR_URL=$(jq -r '.author.url // "https://github.com/REDSIM/"' Packages/red.sim.lightvolumes/package.json)
+          NAME=$(jq -r '.name' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          VERSION=$(jq -r '.version' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          DISPLAY=$(jq -r '.displayName' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          DESCRIPTION=$(jq -r '.description' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          UNITY=$(jq -r '.unity' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          AUTHOR_NAME=$(jq -r '.author.name // "RED_SIM"' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
+          AUTHOR_URL=$(jq -r '.author.url // "https://github.com/REDSIM/"' Packages/io.github.auzlex.subsystem-lightvolumes/package.json)
 
           echo "name=$NAME"               >> "$GITHUB_OUTPUT"
           echo "version=$VERSION"         >> "$GITHUB_OUTPUT"
@@ -35,7 +35,7 @@ jobs:
         run: |
           ZIP_NAME="${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip"
 
-          cd Packages/red.sim.lightvolumes
+          cd Packages/io.github.auzlex.subsystem-lightvolumes
           zip -r "../../../$ZIP_NAME" .
           cd ../..
 

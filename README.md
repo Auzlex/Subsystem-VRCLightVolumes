@@ -3,7 +3,7 @@
 <p align="center"> <img src="./Documentation/LogoMain.png#gh-dark-mode-only" alt="VRC Light Volumes Main Logo" width="627" /></p>
 <p align="center"> <img src="./Documentation/LogoMainBright.png#gh-light-mode-only" alt="VRC Light Volumes Main Logo" width="627" /></p>
 
-VRC Light Volumes is an optimized voxel-based and analytic lighting solution for Unity and VRChat.
+**VRC Light Volumes (Subsystem Fork)** is a fork of RED_SIM's optimized voxel-based and analytic lighting solution for VRChat, slightly modified for internal Subsystem usage (extended support for LV DMX bridge).
 
 **[Installation process described here](#Installation-through-VRChat-Creator-Companion)**
 
@@ -49,11 +49,11 @@ This is a free and open-source asset. If you really like it, you can **[support 
 Use the optional attribution prefab to tell visitors about avatar shaders that support VRC Light Volumes:
 
 ```text
-Packages/red.sim.lightvolumes/Attribution/
+Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/
 ```
 
-<p align="center"> <img src="./Packages/red.sim.lightvolumes/Attribution/LV_Logo_B.png#gh-dark-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
-<p align="center"> <img src="./Packages/red.sim.lightvolumes/Attribution/LV_Logo_A.png#gh-light-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
+<p align="center"> <img src="./Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/LV_Logo_B.png#gh-dark-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
+<p align="center"> <img src="./Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/LV_Logo_A.png#gh-light-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
 
 You can use this message instead:
 
@@ -64,19 +64,25 @@ VRC Light Volumes by RED_SIM — GitHub: https://github.com/REDSIM/VRCLightVolum
 
 Attribution is optional, but appreciated.
 
-## Installation Through VRChat Creator Companion
+> [!NOTE]
+> **Subsystem Fork Information**
+> This repository is a fork of [RED_SIM/VRCLightVolumes](https://github.com/REDSIM/VRCLightVolumes).
+> It is slightly modified for internal Subsystem usage to provide extended support for the LV DMX bridge (`PointLightVolumeInstance` interface extensions: `AngleData`, `DirectionData`, `CustomID`, `SetCustomTexture`, `SetRotation`, `SetDirection`).
+> Package ID: `io.github.auzlex.subsystem-lightvolumes`.
 
-1. In VCC, open **Settings > Packages** and click **Add Repository**.
+## Installation Through VRChat Creator Companion (or ALCOM)
+
+1. In VCC or ALCOM, open **Settings > Packages** and click **Add Repository**.
 2. Paste this URL into the repository field:
 
    ```text
-   https://redsim.github.io/vpmlisting/index.json
+   https://auzlex.github.io/vpm/index.json
    ```
 
 3. Click **Add**, then confirm with **I Understand, Add Repository**.
-4. Under **Projects**, click **Manage Project** for your world, then click **[+]** next to **VRC Light Volumes**.
+4. Under **Projects**, click **Manage Project** for your world, then click **[+]** next to **VRC Light Volumes (Auzlex's Subsystem Fork)** (`io.github.auzlex.subsystem-lightvolumes`).
 
-Alternatively, open the [RED_SIM VPM Listing](https://redsim.github.io/vpmlisting/) and click **Add to VCC** to add the repository.
+Alternatively, add from the [Auzlex VPM Listing](https://auzlex.github.io/vpm/index.json).
 
 ## Installation Through Unity Package Manager
 
@@ -85,7 +91,7 @@ Alternatively, open the [RED_SIM VPM Listing](https://redsim.github.io/vpmlistin
 3. Enter:
 
    ```text
-   https://github.com/REDSIM/VRCLightVolumes.git?path=/Packages/red.sim.lightvolumes
+   https://github.com/Auzlex/Subsystem-VRCLightVolumes.git?path=/Packages/io.github.auzlex.subsystem-lightvolumes
    ```
 
 4. Press **Add**.
