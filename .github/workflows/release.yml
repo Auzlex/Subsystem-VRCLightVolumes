@@ -36,7 +36,7 @@ jobs:
           ZIP_NAME="${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip"
 
           cd Packages/io.github.auzlex.subsystem-lightvolumes
-          zip -r "../../../$ZIP_NAME" .
+          zip -r "../../$ZIP_NAME" .
           cd ../..
 
           echo "ZIP_NAME=$ZIP_NAME" >> "$GITHUB_ENV"
