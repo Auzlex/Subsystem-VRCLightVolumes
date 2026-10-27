@@ -1,7 +1,7 @@
 {
   "name": "io.github.auzlex.subsystem-lightvolumes",
   "displayName": "VRC Light Volumes (Auzlex's Subsystem Fork)",
-  "description": "Auzlex fork of VRC Light Volumes with DMX bridge compatibility functions for VRSL integration",
+  "description": "Fork of Red Sims optimised voxel-based and analytic lighting solution for VRChat, slightly modified for internal Subsystem usage",
   "version": "3.0.1",
   "unity": "2022.3",
   "author": {
