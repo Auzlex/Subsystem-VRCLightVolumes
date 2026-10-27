@@ -15,7 +15,7 @@ namespace VRCLightVolumes.Tests {
         [TestCase("LightVolumesBuildConfig.cginc")]
         public void SharedIncludesHaveBalancedBracesBeforePreprocessing(string fileName) {
             string source = File.ReadAllText(Path.Combine(Application.dataPath,
-                "../Packages/red.sim.lightvolumes/Shaders", fileName));
+                "../Packages/io.github.auzlex.subsystem-lightvolumes/Shaders", fileName));
             source = Regex.Replace(source, @"\\\r?\n", "");
             source = Regex.Replace(source, @"/\*[\s\S]*?\*/|//[^\r\n]*", "");
             source = Regex.Replace(source, @"(?m)^[ \t]*#[^\r\n]*", "");
@@ -72,7 +72,7 @@ namespace VRCLightVolumes.Tests {
         }
 
         private static string BuildBudgetShader(string target) {
-            const string includePath = "Packages/red.sim.lightvolumes/Shaders/LightVolumes.cginc";
+            const string includePath = "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumes.cginc";
             string projectRoot = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
             string source = File.ReadAllText(Path.Combine(projectRoot, includePath));
             var uniforms = Regex.Matches(source,

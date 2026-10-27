@@ -9,7 +9,7 @@ Shader "Hidden/LV_DebugDisplayL0"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            #include "Packages/red.sim.lightvolumes/Shaders/LightVolumes.cginc"
+            #include "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumes.cginc"
 
             struct appdata
             {

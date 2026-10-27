@@ -31,7 +31,7 @@ Shader "Light Volume Samples/Light Volume PBR"
 		Cull [_Culling]
 		CGINCLUDE
 		#include "UnityStandardUtils.cginc"
-		#include "Packages/red.sim.lightvolumes/Shaders/LightVolumes.cginc"
+		#include "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumes.cginc"
 		#include "UnityStandardBRDF.cginc"
 		#include "UnityPBSLighting.cginc"
 		#include "Lighting.cginc"

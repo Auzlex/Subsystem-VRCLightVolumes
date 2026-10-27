@@ -13,7 +13,7 @@ Shader "Hidden/LV_DebugDisplayFineClustering"
 
             #include "UnityCG.cginc"
             #define VRCLV_PREVIEW_FINE_CLUSTERING 1
-            #include "Packages/red.sim.lightvolumes/Shaders/Editor/LV_UnityPreviewClusteringCommon.cginc"
+            #include "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/Editor/LV_UnityPreviewClusteringCommon.cginc"
 
             struct Attributes
             {

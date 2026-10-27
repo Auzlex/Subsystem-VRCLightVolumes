@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 namespace VRCLightVolumes.Tests {
     [Category("Editor")]
     public class LightVolumeDebuggerStatsTests {
-        private const string AssetRoot = "Packages/red.sim.lightvolumes/Extra/Light Volume Debugger/";
+        private const string AssetRoot = "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Light Volume Debugger/";
         private const string ShaderName = "Light Volume Samples/Light Volume Debugger Stats";
 
         [TestCase(ShaderCompilerPlatform.D3D, BuildTarget.StandaloneWindows64, "")]
