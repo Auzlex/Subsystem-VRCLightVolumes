@@ -1,0 +1,30 @@
+{
+  "name": "io.github.auzlex.subsystem-lightvolumes",
+  "displayName": "VRC Light Volumes (Auzlex's Subsystem Fork)",
+  "description": "Auzlex fork of VRC Light Volumes with DMX bridge compatibility functions for VRSL integration",
+  "version": "3.0.1",
+  "unity": "2022.3",
+  "author": {
+    "name": "Auzlex (original: RED_SIM)",
+    "url": "https://github.com/Auzlex"
+  },
+  "documentationUrl": "https://github.com/Auzlex/Subsystem-VRCLightVolumes/blob/main/README.md",
+  "changelogUrl": "https://github.com/Auzlex/Subsystem-VRCLightVolumes/releases",
+  "keywords": [
+    "shaders",
+    "lighting",
+    "vfx"
+  ],
+  "license": "MIT",
+  "type": "assets",
+  "dependencies": {
+    "com.unity.editorcoroutines": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Examples",
+      "description": "Example Scenes to test VRC Light Volumes.",
+      "path": "Examples~"
+    }
+  ]
+}
