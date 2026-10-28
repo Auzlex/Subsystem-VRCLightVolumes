@@ -49,11 +49,11 @@ This is a free and open-source asset. If you really like it, you can **[support 
 Use the optional attribution prefab to tell visitors about avatar shaders that support VRC Light Volumes:
 
 ```text
-Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/
+Packages/red.sim.lightvolumes/Attribution/
 ```
 
-<p align="center"> <img src="./Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/LV_Logo_B.png#gh-dark-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
-<p align="center"> <img src="./Packages/io.github.auzlex.subsystem-lightvolumes/Attribution/LV_Logo_A.png#gh-light-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
+<p align="center"> <img src="./Packages/red.sim.lightvolumes/Attribution/LV_Logo_B.png#gh-dark-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
+<p align="center"> <img src="./Packages/red.sim.lightvolumes/Attribution/LV_Logo_A.png#gh-light-mode-only" alt="VRC Light Volumes Logo" width="400" /></p>
 
 You can use this message instead:
 
@@ -68,7 +68,7 @@ Attribution is optional, but appreciated.
 > **Subsystem Fork Information**
 > This repository is a fork of [RED_SIM/VRCLightVolumes](https://github.com/REDSIM/VRCLightVolumes).
 > It is slightly modified for internal Subsystem usage to provide extended support for the LV DMX bridge (`PointLightVolumeInstance` interface extensions: `AngleData`, `DirectionData`, `CustomID`, `SetCustomTexture`, `SetRotation`, `SetDirection`).
-> Package ID: `io.github.auzlex.subsystem-lightvolumes`.
+> Package ID: `red.sim.lightvolumes`.
 
 ## Installation Through VRChat Creator Companion (or ALCOM)
 
@@ -80,7 +80,7 @@ Attribution is optional, but appreciated.
    ```
 
 3. Click **Add**, then confirm with **I Understand, Add Repository**.
-4. Under **Projects**, click **Manage Project** for your world, then click **[+]** next to **VRC Light Volumes (Auzlex's Subsystem Fork)** (`io.github.auzlex.subsystem-lightvolumes`).
+4. Under **Projects**, click **Manage Project** for your world, then click **[+]** next to **VRC Light Volumes (Subsystem Fork)** (`red.sim.lightvolumes`).
 
 Alternatively, add from the [Auzlex VPM Listing](https://auzlex.github.io/vpm/index.json).
 
@@ -91,7 +91,7 @@ Alternatively, add from the [Auzlex VPM Listing](https://auzlex.github.io/vpm/in
 3. Enter:
 
    ```text
-   https://github.com/Auzlex/Subsystem-VRCLightVolumes.git?path=/Packages/io.github.auzlex.subsystem-lightvolumes
+   https://github.com/Auzlex/Subsystem-VRCLightVolumes.git?path=/Packages/red.sim.lightvolumes
    ```
 
 4. Press **Add**.
