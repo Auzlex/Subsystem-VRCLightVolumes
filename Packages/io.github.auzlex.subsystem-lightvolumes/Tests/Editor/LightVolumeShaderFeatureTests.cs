@@ -55,7 +55,7 @@ namespace VRCLightVolumes.Tests {
         [TestCase("Assets/LightVolumesBuildConfig.cginc", true)]
         [TestCase("Assets/Shader Integration/Includes/LightVolumesBuildConfig.cginc", true)]
         [TestCase("Packages/com.example.shader/Includes/LightVolumesBuildConfig.cginc", true)]
-        [TestCase("Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumesBuildConfig.cginc", true)]
+        [TestCase("Packages/red.sim.lightvolumes/Shaders/LightVolumesBuildConfig.cginc", true)]
         [TestCase("Assets/LightVolumesBuildConfig.cginc.meta", false)]
         [TestCase("Assets/LightVolumesBuildConfig.cginc.backup", false)]
         [TestCase("Assets/MyLightVolumesBuildConfig.cginc", false)]

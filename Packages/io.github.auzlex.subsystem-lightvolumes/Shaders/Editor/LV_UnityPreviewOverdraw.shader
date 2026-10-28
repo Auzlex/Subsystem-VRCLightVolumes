@@ -13,7 +13,7 @@ Shader "Hidden/LV_DebugDisplayOverdraw"
 
             #include "UnityCG.cginc"
             #define VRCLV_FORCE_FULL_FEATURES 1
-            #include "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumes.cginc"
+            #include "Packages/red.sim.lightvolumes/Shaders/LightVolumes.cginc"
 
             struct Attributes
             {

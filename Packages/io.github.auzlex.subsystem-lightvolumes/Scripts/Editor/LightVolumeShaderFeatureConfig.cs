@@ -105,7 +105,7 @@ namespace VRCLightVolumes {
     internal static class LightVolumeShaderFeatureConfig {
         private const string ConfigFileName = "LightVolumesBuildConfig.cginc";
         internal const string ConfigMarker = "// VRC Light Volumes: managed shader stripping config";
-        private const string ConfigAssetPath = "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumesBuildConfig.cginc";
+        private const string ConfigAssetPath = "Packages/red.sim.lightvolumes/Shaders/LightVolumesBuildConfig.cginc";
         private static readonly string[] _disableTags = {
             "VRCLV_DISABLE_REGULAR_VOLUMES", "VRCLV_DISABLE_ADDITIVE_VOLUMES",
             "VRCLV_DISABLE_POINT_LIGHTS", "VRCLV_DISABLE_SPOT_LIGHTS", "VRCLV_DISABLE_AREA_LIGHTS",

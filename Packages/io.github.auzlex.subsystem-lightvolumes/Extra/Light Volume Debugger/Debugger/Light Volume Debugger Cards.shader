@@ -25,7 +25,7 @@ Shader "Light Volume Samples/Light Volume Debugger" {
 
         CGINCLUDE
         #include "UnityCG.cginc"
-        #include "Packages/io.github.auzlex.subsystem-lightvolumes/Shaders/LightVolumes.cginc"
+        #include "Packages/red.sim.lightvolumes/Shaders/LightVolumes.cginc"
 
         #define LVDEBUG_BINARY_SEARCH_STEPS 12
         #define LVDEBUG_BOUNDS_EDGE_COUNT 12u

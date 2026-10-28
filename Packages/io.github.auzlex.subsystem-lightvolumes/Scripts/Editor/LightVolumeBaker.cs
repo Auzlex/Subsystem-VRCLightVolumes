@@ -16,7 +16,7 @@ namespace VRCLightVolumes {
         private const int ProbeBakeThreadGroupSize = 64;
         private const int AdditionalProbeIdStart = 0x4C560000;
         private const int ProgressiveCompletionProbeId = 0x4C56FFFF;
-        private const string ProbeBakeComputePath = "Packages/io.github.auzlex.subsystem-lightvolumes/Scripts/Editor/PointLightProbeBake.compute";
+        private const string ProbeBakeComputePath = "Packages/red.sim.lightvolumes/Scripts/Editor/PointLightProbeBake.compute";
         private const string ProbeBakeKernelName = "BakePointLightVolumesIntoProbes";
 
         // List order defines Unity's additional-probe IDs for the lifetime of the active bake.

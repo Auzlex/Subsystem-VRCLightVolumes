@@ -66,7 +66,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 53964a1fb1a73164cbcd97bc3c48b78b|Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Light
+            id: 53964a1fb1a73164cbcd97bc3c48b78b|Packages/red.sim.lightvolumes/Extra/Light
               Volume Debugger/VRC/Controller/LightVolumeDebugger Controller.controller
             objRef: {fileID: 9100000, guid: 53964a1fb1a73164cbcd97bc3c48b78b, type: 2}
           type: 5
@@ -75,7 +75,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: f20563ecd6dc45b45bdf31e5dfd842b6|Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Light
+            id: f20563ecd6dc45b45bdf31e5dfd842b6|Packages/red.sim.lightvolumes/Extra/Light
               Volume Debugger/VRC/Expression/LV Debugger Menu Root.asset
             objRef: {fileID: 11400000, guid: f20563ecd6dc45b45bdf31e5dfd842b6, type: 2}
           prefix: 
@@ -84,7 +84,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 2cee655fc0ddfaa448c796d8956a9806|Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Light
+            id: 2cee655fc0ddfaa448c796d8956a9806|Packages/red.sim.lightvolumes/Extra/Light
               Volume Debugger/VRC/Expression/LV Debugger Parameters.asset
             objRef: {fileID: 11400000, guid: 2cee655fc0ddfaa448c796d8956a9806, type: 2}
         smoothedPrms: []

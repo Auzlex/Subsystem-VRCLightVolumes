@@ -12,24 +12,24 @@ namespace VRCLightVolumes.Tests {
         private const string DirectUdonSharpCompilerGuard = "#if !UDONSHARP && COMPILER_UDONSHARP\n#define UDONSHARP\n#endif";
 
         private static readonly string[] UdonSharpSourcePaths = {
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Buffers.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Clustering.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Core.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Textures.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeInstance.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/PointLightVolumeInstance.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/PointLightVolumeInstance.ShadowBaking.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Audio Link/LightVolumeAudioLink.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/TV Global Illumination/LightVolumeTVGI.cs",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Shadow Runtime Baker/PointLightShadowRuntimeBaker.cs"
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.cs",
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Buffers.cs",
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Clustering.cs",
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Core.cs",
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Textures.cs",
+            "Packages/red.sim.lightvolumes/UScripts/LightVolumeInstance.cs",
+            "Packages/red.sim.lightvolumes/UScripts/PointLightVolumeInstance.cs",
+            "Packages/red.sim.lightvolumes/UScripts/PointLightVolumeInstance.ShadowBaking.cs",
+            "Packages/red.sim.lightvolumes/Extra/Audio Link/LightVolumeAudioLink.cs",
+            "Packages/red.sim.lightvolumes/Extra/TV Global Illumination/LightVolumeTVGI.cs",
+            "Packages/red.sim.lightvolumes/Extra/Shadow Runtime Baker/PointLightShadowRuntimeBaker.cs"
         };
 
         private static readonly string[] UdonSharpAssemblyPaths = {
-            "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asmdef",
-            "Packages/io.github.auzlex.subsystem-lightvolumes/Tests/Editor/red.sim.LightVolumesUdon.EditorTests.asmdef"
+            "Packages/red.sim.lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef",
+            "Packages/red.sim.lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef",
+            "Packages/red.sim.lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asmdef",
+            "Packages/red.sim.lightvolumes/Tests/Editor/red.sim.LightVolumesUdon.EditorTests.asmdef"
         };
 
         private GameObject _legacyObject;
@@ -209,9 +209,9 @@ namespace VRCLightVolumes.Tests {
             const string bakeryRuntimeGuid = "a1653399f63795746b1857281d1e400d";
             const string bakeryEditorGuid = "290dd5870d0ead646bcb6ea5c6a60af5";
             string[] coreAsmdefs = {
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/Scripts/red.sim.LightVolumes.asmdef",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef"
+                "Packages/red.sim.lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef",
+                "Packages/red.sim.lightvolumes/Scripts/red.sim.LightVolumes.asmdef",
+                "Packages/red.sim.lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef"
             };
             for (int i = 0; i < coreAsmdefs.Length; i++) {
                 AssemblyDefinition asmdef = JsonUtility.FromJson<AssemblyDefinition>(File.ReadAllText(coreAsmdefs[i]));
@@ -220,9 +220,9 @@ namespace VRCLightVolumes.Tests {
                 Assert.That(asmdef.references, Does.Not.Contain("GUID:" + bakeryEditorGuid), coreAsmdefs[i]);
             }
 
-            const string audioLinkProgramAssetPath = "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Audio Link/LightVolumeAudioLink.asset";
-            const string optionalAsmdefPath = "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asmdef";
-            const string optionalAssemblyAssetPath = "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asset";
+            const string audioLinkProgramAssetPath = "Packages/red.sim.lightvolumes/Extra/Audio Link/LightVolumeAudioLink.asset";
+            const string optionalAsmdefPath = "Packages/red.sim.lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asmdef";
+            const string optionalAssemblyAssetPath = "Packages/red.sim.lightvolumes/Extra/Audio Link/red.sim.LightVolumes.AudioLinkUdon.asset";
             AssemblyDefinition audioLinkAsmdef = JsonUtility.FromJson<AssemblyDefinition>(File.ReadAllText(optionalAsmdefPath));
             Assert.That(audioLinkAsmdef.references, Does.Not.Contain("GUID:" + audioLinkGuid));
             Assert.That(audioLinkAsmdef.defineConstraints, Is.Empty, "A conditional asmdef leaves its UdonSharp program asset outside every active U# assembly.");
@@ -232,7 +232,7 @@ namespace VRCLightVolumes.Tests {
             Assert.That(audioLinkProgramAsset, Does.Not.Contain("AudioLink.AudioLink, AudioLink"));
             Assert.That(audioLinkProgramAsset, Does.Contain("UdonSharp.UdonSharpBehaviour, UdonSharp.Runtime"));
 
-            string packageManifest = File.ReadAllText("Packages/io.github.auzlex.subsystem-lightvolumes/package.json");
+            string packageManifest = File.ReadAllText("Packages/red.sim.lightvolumes/package.json");
             Assert.That(packageManifest, Does.Not.Contain("com.llealloo.audiolink"));
         }
 

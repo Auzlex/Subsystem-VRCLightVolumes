@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 namespace VRCLightVolumes.Tests {
     [Category("Editor")]
     public class LightVolumeDebuggerClusteringTests {
-        private const string AssetRoot = "Packages/io.github.auzlex.subsystem-lightvolumes/Extra/Light Volume Debugger/Debugger/";
+        private const string AssetRoot = "Packages/red.sim.lightvolumes/Extra/Light Volume Debugger/Debugger/";
         private const string ShaderName = "Light Volume Samples/Light Volume Debugger Clustering";
         private const int ImageSize = 64;
         private const int GridSize = 8;

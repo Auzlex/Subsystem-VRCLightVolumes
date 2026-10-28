@@ -229,7 +229,7 @@ namespace VRCLightVolumes.Tests {
             UdonSharpProgramAsset program = UdonSharpEditorUtility.GetUdonSharpProgramAsset(typeof(LightVolumeManager));
             Assert.That(program, Is.Not.Null);
             Assert.That(program.sourceCsScript, Is.Not.Null);
-            Assert.That(AssetDatabase.GetAssetPath(program), Is.EqualTo("Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.asset"));
+            Assert.That(AssetDatabase.GetAssetPath(program), Is.EqualTo("Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.asset"));
             Assert.That(program.AssemblyError, Is.Null.Or.Empty);
             Assert.That(program.CompiledVersion, Is.Not.EqualTo(UdonSharpProgramVersion.Unknown));
             Assert.That(program.CompiledVersion, Is.EqualTo(program.ScriptVersion));
@@ -243,7 +243,7 @@ namespace VRCLightVolumes.Tests {
             UdonSharpProgramAsset program = UdonSharpEditorUtility.GetUdonSharpProgramAsset(typeof(PointLightVolumeInstance));
             Assert.That(program, Is.Not.Null);
             Assert.That(program.sourceCsScript, Is.Not.Null);
-            Assert.That(AssetDatabase.GetAssetPath(program), Is.EqualTo("Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/PointLightVolumeInstance.asset"));
+            Assert.That(AssetDatabase.GetAssetPath(program), Is.EqualTo("Packages/red.sim.lightvolumes/UScripts/PointLightVolumeInstance.asset"));
             Assert.That(program.AssemblyError, Is.Null.Or.Empty);
             Assert.That(program.CompiledVersion, Is.Not.EqualTo(UdonSharpProgramVersion.Unknown));
             Assert.That(program.CompiledVersion, Is.EqualTo(program.ScriptVersion));
@@ -315,8 +315,8 @@ namespace VRCLightVolumes.Tests {
                     "The Udon core must not acquire an editor-only assembly reference: " + referenceName);
             }
 
-            const string udonAsmdefPath = "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef";
-            const string editorAsmdefPath = "Packages/io.github.auzlex.subsystem-lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef";
+            const string udonAsmdefPath = "Packages/red.sim.lightvolumes/UScripts/red.sim.LightVolumesUdon.asmdef";
+            const string editorAsmdefPath = "Packages/red.sim.lightvolumes/Scripts/Editor/red.sim.LightVolumesEditor.asmdef";
             string editorAsmdefGuid = AssetDatabase.AssetPathToGUID(editorAsmdefPath);
             string udonAsmdef = File.ReadAllText(udonAsmdefPath);
             Assert.That(editorAsmdefGuid, Is.Not.Empty);
@@ -343,9 +343,9 @@ namespace VRCLightVolumes.Tests {
         // The script and UdonSharp program-source GUIDs are embedded in existing scene YAML and backing behaviours.
         [Test]
         public void ManagerPackageAssetGuidsRemainStable() {
-            Assert.That(AssetDatabase.AssetPathToGUID("Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.cs"),
+            Assert.That(AssetDatabase.AssetPathToGUID("Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.cs"),
                 Is.EqualTo("a4c164fbf42cf794a8edc0fd006e1b60"));
-            Assert.That(AssetDatabase.AssetPathToGUID("Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.asset"),
+            Assert.That(AssetDatabase.AssetPathToGUID("Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.asset"),
                 Is.EqualTo("d722b6db295ca634790a0beebd593b48"));
         }
 
@@ -353,12 +353,12 @@ namespace VRCLightVolumes.Tests {
         [Test]
         public void ManagerPartialSourcesDoNotCreateAdditionalProgramAssets() {
             string[] partialSources = {
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Buffers.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Clustering.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Core.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Editor.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Registries.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/LightVolumeManager.Textures.cs"
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Buffers.cs",
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Clustering.cs",
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Core.cs",
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Editor.cs",
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Registries.cs",
+                "Packages/red.sim.lightvolumes/UScripts/LightVolumeManager.Textures.cs"
             };
 
             for (int i = 0; i < partialSources.Length; i++) {
@@ -373,8 +373,8 @@ namespace VRCLightVolumes.Tests {
         [Test]
         public void PointLightPartialSourcesDoNotCreateAdditionalProgramAssets() {
             string[] partialSources = {
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/PointLightVolumeInstance.Editor.cs",
-                "Packages/io.github.auzlex.subsystem-lightvolumes/UScripts/PointLightVolumeInstance.ShadowBaking.cs"
+                "Packages/red.sim.lightvolumes/UScripts/PointLightVolumeInstance.Editor.cs",
+                "Packages/red.sim.lightvolumes/UScripts/PointLightVolumeInstance.ShadowBaking.cs"
             };
 
             for (int i = 0; i < partialSources.Length; i++) {
@@ -498,7 +498,7 @@ namespace VRCLightVolumes.Tests {
 
         // Reads the runtime blur shader from either a Unity project root or this package directory.
         private static string ReadRuntimeShadowBlurShaderSource() {
-            string projectPackagePath = Path.Combine("Packages", "io.github.auzlex.subsystem-lightvolumes", RuntimeShadowBlurShaderPath);
+            string projectPackagePath = Path.Combine("Packages", "red.sim.lightvolumes", RuntimeShadowBlurShaderPath);
             string packagePath = RuntimeShadowBlurShaderPath;
             string shaderPath = File.Exists(projectPackagePath) ? projectPackagePath : packagePath;
             Assert.That(File.Exists(shaderPath), Is.True, shaderPath + " was not found");
@@ -507,7 +507,7 @@ namespace VRCLightVolumes.Tests {
 
         // Reads the public lighting include from either a Unity project root or this package directory.
         private static string ReadLightVolumesIncludeSource() {
-            string projectPackagePath = Path.Combine("Packages", "io.github.auzlex.subsystem-lightvolumes", LightVolumesIncludePath);
+            string projectPackagePath = Path.Combine("Packages", "red.sim.lightvolumes", LightVolumesIncludePath);
             string packagePath = LightVolumesIncludePath;
             string shaderPath = File.Exists(projectPackagePath) ? projectPackagePath : packagePath;
             Assert.That(File.Exists(shaderPath), Is.True, shaderPath + " was not found");
